@@ -1,7 +1,10 @@
 <html> 
 <head>
     <title>robin_kuo7 Design</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        /* Font-face declarations unchanged */
+
         @font-face {
             font-family: 'FOT-Rodin Pro B';
             src: url('Fonts/FOT-Rodin Pro B.otf') format('opentype');
@@ -62,8 +65,9 @@
         body {
             background-color: blue;
             margin: 0;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             font-family: 'FOT-Rodin Pro B', Arial, sans-serif;
@@ -71,6 +75,31 @@
         .center-text {
             color: white;
             font-size: 2em;
+            text-align: center;
+            padding: 0 1em;
+            word-break: break-word;
+        }
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 1em;
+            color: #e0e0e0;
+            font-family: 'FOT-Skip Std B', Arial, sans-serif;
+            padding: 0 1em;
+        }
+        @media (max-width: 600px) {
+            .center-text {
+                font-size: 1.2em;
+                padding: 0 0.5em;
+            }
+            .footer {
+                font-size: 0.9em;
+                bottom: 10px;
+                padding: 0 0.5em;
+            }
         }
     </style>
 </head>
@@ -78,9 +107,8 @@
     <div class="center-text">
         Hello There, this page is not done yet! Please check back later.
     </div>
-    <div style="position: fixed; bottom: 20px; width: 100%; text-align: center; font-size: 1em; color: #e0e0e0; font-family: 'FOT-Skip Std B', Arial, sans-serif;">
+    <div class="footer">
         robin_kuo7 2025
-    </div>
     </div>
 </body>
 </html>
