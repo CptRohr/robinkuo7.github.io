@@ -57,6 +57,10 @@
 }
 
 /* ---------------- Base Styles ---------------- */
+* {
+    box-sizing: border-box;
+}
+
 body {
     background: repeating-linear-gradient(45deg, #79d7fd, #00bbfa, #001736, #00183e, #ffc54a);
     background-size: 400% 400%;
@@ -88,7 +92,8 @@ h1 {
     margin: 0.5em 0;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
 }
-.font-rodin-b { font-family: 'FOT-Rodin Pro B'; }
+
+/* ---------------- Utility Font Classes ---------------- */
 .font-rodin-db { font-family: 'FOT-Rodin Pro DB'; }
 .font-rodin-eb { font-family: 'FOT-Rodin Pro EB'; }
 .font-rodin-l { font-family: 'FOT-Rodin Pro L'; }
@@ -103,30 +108,108 @@ h1 {
 .font-skip { font-family: 'FOT-Skip Std B'; }
 .font-bmspa { font-family: 'BMSPA'; }
 
-.btn {
-    display: inline-block;
-    padding: 0.7em 1.5em;
-    background: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-}
-.btn:hover {
-    background: #0056b3;
-    transform: scale(1.05);
+/* ---------------- Animated CTA Button ---------------- */
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
 }
 
+.btn-cta {
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 2.5rem;
+    text-decoration: none;
+    font-family: 'FOT-Rodin Pro EB', sans-serif;
+    font-size: 2rem;
+    color: #fff;
+    background: #00bbfa;
+    border: none;
+    cursor: pointer;
+    transform: skewX(-15deg);
+    box-shadow: 6px 6px 0 #000;
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.btn-cta:focus {
+    outline: none;
+}
+
+.btn-cta:hover {
+    box-shadow: 10px 10px 0 #ffc54a;
+    transform: skewX(-15deg) scale(1.05);
+}
+
+/* Text inside CTA */
+.btn-cta span {
+    transform: skewX(15deg);
+}
+
+.btn-cta span:nth-child(2) {
+    width: 30px;
+    margin-left: 2rem;
+    position: relative;
+    top: 12%;
+    transition: margin-right 0.5s ease;
+}
+
+.btn-cta:hover span:nth-child(2) {
+    margin-right: 2.5rem;
+}
+
+/* SVG arrow animations */
+.btn-cta svg {
+  display: block;
+  overflow: visible;
+}
+
+.btn-cta svg path {
+  fill: none;
+  stroke: #fff;              
+  stroke-width: 3;           
+  stroke-linejoin: miter;
+  stroke-linecap: miter;
+  transform-box: fill-box;  
+  transform-origin: center;
+  transition: transform 0.35s ease, stroke 0.35s ease;
+}
+
+/* initial offset so arrows slide in */
+path.one   { transform: translateX(-10px); }
+path.two   { transform: translateX(-6px); }
+path.three { transform: translateX(-4px); }
+
+/* hover effects: slide in + color animation */
+.btn-cta:hover path.one {
+  transform: translateX(0);
+  animation: stroke_anim 1s infinite 0.2s;
+}
+.btn-cta:hover path.two {
+  transform: translateX(0);
+  animation: stroke_anim 1s infinite 0.4s;
+}
+.btn-cta:hover path.three {
+  transform: translateX(0);
+  animation: stroke_anim 1s infinite 0.6s;
+}
+
+/* stroke color flicker */
+@keyframes stroke_anim {
+  0%, 100% { stroke: #fff; }
+  50%      { stroke: #ffc54a; }
+}
+
+
+
+/* ---------------- Footer ---------------- */
 footer {
     position: fixed;
     bottom: 20px;
     left: 0;
     width: 100%;
     text-align: center;
-    font-size: 1em;
+    font-size: 1.5em;
     color: #e0e0e0;
     font-family: 'FOT-Skip Std B', Arial, sans-serif;
     padding: 0 1em;
@@ -136,12 +219,13 @@ footer {
     h1 {
         font-size: 1.4em;
     }
-    .btn {
-        font-size: 0.9em;
-        padding: 0.5em 1em;
+    .btn-cta {
+        font-size: 1.2rem;
+        padding: 0.5rem 0.5rem;
     }
     footer {
         font-size: 0.9em;
         bottom: 10px;
     }
 }
+
