@@ -1,0 +1,147 @@
+/* ---------------- Fonts ---------------- */
+@font-face {
+    font-family: 'FOT-Rodin Pro B';
+    src: url('Fonts/FOT-Rodin Pro B.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'FOT-Rodin Pro DB';
+    src: url('Fonts/FOT-Rodin Pro DB.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'FOT-Rodin Pro EB';
+    src: url('Fonts/FOT-Rodin Pro EB.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'FOT-Rodin Pro L';
+    src: url('Fonts/FOT-Rodin Pro L.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'FOT-Rodin Pro M';
+    src: url('Fonts/FOT-Rodin Pro M.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'FOT-Rodin Pro UB';
+    src: url('Fonts/FOT-Rodin Pro UB.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'FOT-NewRodin Pro B';
+    src: url('Fonts/FOT-NewRodin Pro B.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'FOT-NewRodin Pro DB';
+    src: url('Fonts/FOT-NewRodin Pro DB.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'FOT-NewRodin Pro EB';
+    src: url('Fonts/FOT-NewRodin Pro EB.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'FOT-NewRodin Pro L';
+    src: url('Fonts/FOT-NewRodin Pro L.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'FOT-NewRodin Pro M';
+    src: url('Fonts/FOT-NewRodin Pro M.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'FOT-NewRodin Pro UB';
+    src: url('Fonts/FOT-NewRodin Pro UB.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'FOT-Skip Std B';
+    src: url('Fonts/FOT-Skip Std B.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'BMSPA';
+    src: url('Fonts/BMSPA___.TTF') format('truetype');
+}
+
+/* ---------------- Base Styles ---------------- */
+body {
+    background: repeating-linear-gradient(45deg, #79d7fd, #00bbfa, #001736, #00183e, #ffc54a);
+    background-size: 400% 400%;
+    animation: gradientBG 15s infinite;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'FOT-Rodin Pro B', Arial, sans-serif;
+    color: white;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+main {
+    text-align: center;
+    padding: 0 1em;
+    word-break: break-word;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.5em 0;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+}
+.font-rodin-b { font-family: 'FOT-Rodin Pro B'; }
+.font-rodin-db { font-family: 'FOT-Rodin Pro DB'; }
+.font-rodin-eb { font-family: 'FOT-Rodin Pro EB'; }
+.font-rodin-l { font-family: 'FOT-Rodin Pro L'; }
+.font-rodin-m { font-family: 'FOT-Rodin Pro M'; }
+.font-rodin-ub { font-family: 'FOT-Rodin Pro UB'; }
+.font-newrodin-b { font-family: 'FOT-NewRodin Pro B'; }
+.font-newrodin-db { font-family: 'FOT-NewRodin Pro DB'; }
+.font-newrodin-eb { font-family: 'FOT-NewRodin Pro EB'; }
+.font-newrodin-l { font-family: 'FOT-NewRodin Pro L'; }
+.font-newrodin-m { font-family: 'FOT-NewRodin Pro M'; }
+.font-newrodin-ub { font-family: 'FOT-NewRodin Pro UB'; }
+.font-skip { font-family: 'FOT-Skip Std B'; }
+.font-bmspa { font-family: 'BMSPA'; }
+
+.btn {
+    display: inline-block;
+    padding: 0.7em 1.5em;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+.btn:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+footer {
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+    color: #e0e0e0;
+    font-family: 'FOT-Skip Std B', Arial, sans-serif;
+    padding: 0 1em;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.4em;
+    }
+    .btn {
+        font-size: 0.9em;
+        padding: 0.5em 1em;
+    }
+    footer {
+        font-size: 0.9em;
+        bottom: 10px;
+    }
+}
